@@ -1,0 +1,6 @@
+<div>
+  <input type="text" [formControl]="searchedField">
+  <ul *ngFor="let user of filteredValues$ | async">
+    <li>{{user.firstName}} {{user.lastName}}</li>
+  </ul>
+</div>
