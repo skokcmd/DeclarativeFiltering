@@ -21,7 +21,7 @@ export class FilterableDataListComponent<T>
   }
 
   // function that filters the filteredValues array
-  // accepts callback function to filter the data
+  // accepts callback function (as param) that returns filtered array of data based on its input items
   filter(callback: (items: T[], searchTerm: string) => T[]): void {
     // Observable of the input field, starts with its default value('')
     const searchTermInput$: Observable<string> =
