@@ -28,8 +28,8 @@ export class UserListComponent
   filterUser(users: User[], searchTerm: string): User[] {
     return users.filter(
       (user) =>
-        user.firstName.toLowerCase().includes(searchTerm) ||
-        user.lastName.toLowerCase().includes(searchTerm)
+        user.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        user.lastName.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
 }

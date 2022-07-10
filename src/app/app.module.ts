@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DataListComponent } from './shared/data-list/data-list.component';
 import { FilterableDataListComponent } from './shared/filterable-data-list/filterable-data-list.component';
 import { UserListComponent } from './users-page/user-list/user-list.component';
+import { WidgetComponent } from './shared/widget/widget.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { UserListComponent } from './users-page/user-list/user-list.component';
     DataListComponent,
     FilterableDataListComponent,
     UserListComponent,
+    WidgetComponent,
   ],
   imports: [BrowserModule, ReactiveFormsModule],
   providers: [],

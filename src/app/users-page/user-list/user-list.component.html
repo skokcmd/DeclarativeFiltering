@@ -1,5 +1,5 @@
-<div>
-  <input type="text" [formControl]="searchedField">
+<div class="list-wrapper">
+  <input type="text" [formControl]="searchedField" placeholder="Filter users...">
   <ul *ngFor="let user of filteredValues$ | async">
     <li>{{user.firstName}} {{user.lastName}}</li>
   </ul>
