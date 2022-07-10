@@ -20,14 +20,16 @@ export class UserListComponent
     // filters the data based on searchTermInput value & our callback function
     this.filter(
       // callback which is provided the item & searchTerm values
-      (user, searchTerm) => this.filterUser(user, searchTerm)
+      (users, searchTerm) => this.filterUser(users, searchTerm)
     );
   }
 
-  // checks if user fields contain searchTerm string
-  filterUser(user: User, searchTerm: string): (user: User) => boolean {
-    return (user: User) =>
-      user.firstName.toLowerCase().includes(searchTerm) ||
-      user.lastName.toLowerCase().includes(searchTerm);
+  // returns filtered User[] based on specified conditions
+  filterUser(users: User[], searchTerm: string): User[] {
+    return users.filter(
+      (user) =>
+        user.firstName.toLowerCase().includes(searchTerm) ||
+        user.lastName.toLowerCase().includes(searchTerm)
+    );
   }
 }

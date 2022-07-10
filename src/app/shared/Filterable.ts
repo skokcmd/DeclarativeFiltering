@@ -4,7 +4,5 @@ import { FormControl } from '@angular/forms';
 export interface Filterable<T> {
   filteredValues$: Observable<T[]>;
   searchedField: FormControl;
-  filter(
-    callback: (items: T, searchTerm: string) => (item: T) => boolean
-  ): void;
+  filter(callback: (items: T[], searchTerm: string) => T[]): void;
 }

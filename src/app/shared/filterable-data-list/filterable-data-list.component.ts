@@ -22,18 +22,14 @@ export class FilterableDataListComponent<T>
 
   // function that filters the filteredValues array
   // accepts callback function to filter the data
-  filter(
-    callback: (item: T, searchTerm: string) => (item: T) => boolean
-  ): void {
+  filter(callback: (items: T[], searchTerm: string) => T[]): void {
     // Observable of the input field, starts with its default value('')
     const searchTermInput$: Observable<string> =
       this.searchedField.valueChanges.pipe(startWith(this.searchedField.value));
 
     // filtering  the filtered values using the provided callback function
     this.filteredValues$ = combineLatest([this.items$, searchTermInput$]).pipe(
-      map(([items, searchTerm]) =>
-        items.filter((item) => callback(item, searchTerm))
-      )
+      map(([items, searchTerm]) => callback(items, searchTerm))
     );
   }
 }
